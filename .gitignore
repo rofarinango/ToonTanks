@@ -1,6 +1,9 @@
-# Visual Studio Code user specific files
-.vscode/
-ToonTanks.code-workspace
+### VisualStudioCode ###
+.vscode/*
+.vscode/tasks.json
+.vscode/launch.json
+*.code-workspace
+
 # Visual Studio 2015 user specific files
 .vs/
 
