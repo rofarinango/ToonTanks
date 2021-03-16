@@ -22,7 +22,8 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
 	UCameraComponent* Camera;
 
-	FVector MoveDirection;
+	FVector MoveForwardDirection;
+	FVector MoveRightDirection;
 	FQuat RotationDirection;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Movement", meta=(AllowPrivateAccess="true"))
@@ -30,10 +31,12 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Movement", meta=(AllowPrivateAccess="true"))	
 	float RotateSpeed = 100.0f;
 
-	void CalculateMoveInput(float Value);
+	void CalculateMoveForward(float Value); //Front and back displacement function
+	void CalculateMoveRight(float Value); // Left and right displacement function
 	void CalculateRotateInput(float Value);
 
-	void Move();
+	void MoveForward();
+	void MoveRight();
 	void Rotate();
 
 

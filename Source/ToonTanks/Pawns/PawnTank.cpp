@@ -28,7 +28,8 @@ void APawnTank::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
     Rotate();
-    Move();
+    MoveForward();
+    MoveRight();
 
 }
 
@@ -36,15 +37,21 @@ void APawnTank::Tick(float DeltaTime)
 void APawnTank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-    PlayerInputComponent->BindAxis("MoveForward", this, &APawnTank::CalculateMoveInput);
+    PlayerInputComponent->BindAxis("MoveForward", this, &APawnTank::CalculateMoveForward);
+    PlayerInputComponent->BindAxis("MoveRight", this, &APawnTank::CalculateMoveRight);
     PlayerInputComponent->BindAxis("Turn", this, &APawnTank::CalculateRotateInput);
 
 }
 
-void APawnTank::CalculateMoveInput(float Value) 
+void APawnTank::CalculateMoveForward(float Value) 
 {
-    MoveDirection = FVector(Value * MoveSpeed * GetWorld()->DeltaTimeSeconds, 0 , 0);
+    MoveForwardDirection = FVector(Value * MoveSpeed * GetWorld()->DeltaTimeSeconds, 0 , 0);
 
+}
+
+void APawnTank::CalculateMoveRight(float Value)
+{
+    MoveRightDirection = FVector(0, Value * MoveSpeed * GetWorld()->DeltaTimeSeconds, 0);
 }
 
 void APawnTank::CalculateRotateInput(float Value) 
@@ -54,9 +61,14 @@ void APawnTank::CalculateRotateInput(float Value)
     RotationDirection = FQuat(Rotation);
 }
 
-void APawnTank::Move() 
+void APawnTank::MoveForward() 
 {
-    AddActorLocalOffset(MoveDirection, true);
+    AddActorLocalOffset(MoveForwardDirection, true);
+}
+
+void APawnTank::MoveRight()
+{
+    AddActorLocalOffset(MoveRightDirection, true);
 }
 
 void APawnTank::Rotate() 
