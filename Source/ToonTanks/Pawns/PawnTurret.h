@@ -9,6 +9,7 @@
 /**
  * 
  */
+class ACharacterBase;
 UCLASS()
 class TOONTANKS_API APawnTurret : public APawnBase
 {
@@ -17,10 +18,16 @@ class TOONTANKS_API APawnTurret : public APawnBase
 private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat", meta = (AllowPrivateAccess = true))
 	float FireRate = 2.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat", meta = (AllowPrivateAccess = true))
+	float FireRange = 500.0f;
+	FTimerHandle FireRateTimerHandle;
+	ACharacterBase* PlayerCharacter;
 
 	void CheckFireCondition();
 
-	FTimerHandle FireRateTimerHandle;
+	float ReturnDistanceToPlayer();
+
+	
 
 public:
 
