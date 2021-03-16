@@ -65,6 +65,10 @@ void ACharacterBase::Rotate(float Value)
 void ACharacterBase::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) 
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
+	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
+
     PlayerInputComponent->BindAxis("MoveForward", this, &ACharacterBase::MoveForward);
     PlayerInputComponent->BindAxis("MoveRight", this, &ACharacterBase::MoveRight);
     PlayerInputComponent->BindAxis("Turn", this, &ACharacterBase::Rotate);
