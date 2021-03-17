@@ -11,6 +11,7 @@ class UStaticMeshComponent;
 class UCameraComponent;
 class USceneComponent;
 class APlayerController;
+class AProjectileBase;
 UCLASS()
 class TOONTANKS_API ACharacterBase :  public ACharacter
 {
@@ -19,7 +20,7 @@ class TOONTANKS_API ACharacterBase :  public ACharacter
 public:
 	// Sets default values for this character's properties
 	ACharacterBase();
-
+	// Components
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
 	USpringArmComponent* SpringArm;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
@@ -30,6 +31,9 @@ public:
 	UStaticMeshComponent* TurretMesh;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Player")
 	USceneComponent* ProjectileSpawnPoint;
+		// Variables
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Projectile Type")
+	TSubclassOf<AProjectileBase> ProjectileClass;
 
 protected:
 
