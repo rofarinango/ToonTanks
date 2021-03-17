@@ -8,6 +8,7 @@
 #include "Components/SceneComponent.h"
 #include "Components/InputComponent.h"
 #include "GameFramework/Controller.h"
+#include "GameFramework/PlayerController.h"
 
 // Sets default values
 ACharacterBase::ACharacterBase()
@@ -62,12 +63,63 @@ void ACharacterBase::Rotate(float Value)
 	 AddControllerYawInput(Value * BaseTurnRate * GetWorld()->GetDeltaSeconds());
 }
 
+void ACharacterBase::BeginPlay() 
+{
+	Super::BeginPlay();
+	PlayerControllerRef = Cast<APlayerController>(GetController());
+}
+
+void ACharacterBase::RotateTurret(FVector LookAtTarget) 
+{
+	//Update TurretMesh rotation to face towards the LookAtTarget passed in from Child Classes.
+	// TurretMesh->SetWorldRotation()...
+
+	FVector LookAtTargetClean = FVector(LookAtTarget.X, LookAtTarget.Y, TurretMesh->GetComponentLocation().Z);
+	FVector StartLocation = TurretMesh->GetComponentLocation();
+
+	FRotator TurretRotation = FVector(LookAtTargetClean - StartLocation).Rotation();
+	TurretMesh->SetWorldRotation(TurretRotation);
+}
+
+void ACharacterBase::Fire() 
+{
+	// Get ProjectileSpawnPoint Location && Rotation -> Spawn Projectile class at Location firing towards Rotation.
+	UE_LOG(LogTemp, Warning, TEXT("Fire from tank"));
+}
+
+void ACharacterBase::HandleDestruction() 
+{
+	// -- Universal functionailty ---
+	// Play deaths effects particle, sound and camera shake.
+
+	// -- Then do Child overrides --
+	// -- PawnTurret - Inform GameMode Turret died -> Then Destry() self.
+
+	// -- CharacterBase - Inform GameMode Player died -> Then Hide() all components && stop movement input.
+	Destroy();
+}
+
+
+void ACharacterBase::Tick(float DeltaTime) 
+{
+	Super::Tick(DeltaTime);
+	if(PlayerControllerRef)
+	{
+		FHitResult TraceHitResult;
+		PlayerControllerRef->GetHitResultUnderCursor(ECC_Visibility, false, TraceHitResult);
+		FVector  HitLocation = TraceHitResult.ImpactPoint;
+
+		RotateTurret(HitLocation);
+	}
+}
+
 void ACharacterBase::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) 
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
+	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &ACharacterBase::Fire);
 
     PlayerInputComponent->BindAxis("MoveForward", this, &ACharacterBase::MoveForward);
     PlayerInputComponent->BindAxis("MoveRight", this, &ACharacterBase::MoveRight);

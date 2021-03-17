@@ -18,6 +18,13 @@ void APawnTurret::BeginPlay()
 
     PlayerCharacter = Cast<ACharacterBase>(UGameplayStatics::GetPlayerCharacter(this, 0));
 }
+
+void APawnTurret::HandleDestruction() 
+{
+    // Call base pawn class HandleDestruction to play effects.
+    Super::HandleDestruction();
+    Destroy();
+}
 //Called every frame
 void APawnTurret::Tick(float DeltaTime) 
 {

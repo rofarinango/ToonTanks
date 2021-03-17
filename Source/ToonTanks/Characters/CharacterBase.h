@@ -10,8 +10,9 @@ class USpringArmComponent;
 class UStaticMeshComponent;
 class UCameraComponent;
 class USceneComponent;
+class APlayerController;
 UCLASS()
-class TOONTANKS_API ACharacterBase : public ACharacter
+class TOONTANKS_API ACharacterBase :  public ACharacter
 {
 	GENERATED_BODY()
 
@@ -38,8 +39,19 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
 	float BaseTurnRate;
 
+	APlayerController* PlayerControllerRef;
+
+	virtual void BeginPlay() override;
+
+	void RotateTurret(FVector LookAtTarget);
+
+	void Fire();
+
+	virtual void HandleDestruction();
+
 public:
 
+	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 
