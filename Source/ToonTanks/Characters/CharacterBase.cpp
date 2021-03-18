@@ -103,6 +103,15 @@ void ACharacterBase::HandleDestruction()
 	// -- PawnTurret - Inform GameMode Turret died -> Then Destry() self.
 
 	// -- CharacterBase - Inform GameMode Player died -> Then Hide() all components && stop movement input.
+	bIsPlayerAlive = false;
+
+	SetActorHiddenInGame(true);
+	SetActorTickEnabled(false);
+}
+
+bool ACharacterBase::GetIsPlayerAlive() 
+{
+	return bIsPlayerAlive;
 }
 
 

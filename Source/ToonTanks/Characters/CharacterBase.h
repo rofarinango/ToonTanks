@@ -44,6 +44,7 @@ protected:
 	float BaseTurnRate;
 
 	APlayerController* PlayerControllerRef;
+	bool bIsPlayerAlive = true;
 
 	virtual void BeginPlay() override;
 
@@ -58,6 +59,8 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	virtual void HandleDestruction();
+
+	bool GetIsPlayerAlive();
 
 
 };
