@@ -58,14 +58,24 @@ void ACharacterBase::MoveRight(float Value)
         const FRotator Rotation = Controller->GetControlRotation();
         const FRotator YawRotation(0, Rotation.Yaw, 0);
 
+		
+
         const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
         AddMovementInput(Direction, Value);
+
+		//Base Rotation on moving to sides.
+		FVector LookAtDirection = FVector(0,0, BaseMesh->GetComponentLocation().Z);
+		FVector StartLocation = BaseMesh->GetComponentLocation();
+
+		FRotator BaseRotation = FVector(LookAtDirection - StartLocation).Rotation();
+		BaseMesh->SetWorldRotation(BaseRotation);
     }
 }
 
 void ACharacterBase::Rotate(float Value) 
 {
 	 AddControllerYawInput(Value * BaseTurnRate * GetWorld()->GetDeltaSeconds());
+	 
 }
 
 void ACharacterBase::BeginPlay() 
@@ -77,7 +87,7 @@ void ACharacterBase::BeginPlay()
 void ACharacterBase::RotateTurret(FVector LookAtTarget) 
 {
 	//Update TurretMesh rotation to face towards the LookAtTarget passed in from Child Classes.
-	// TurretMesh->SetWorldRotation()...
+	// TurretMesh->SetWorldRotation()
 
 	FVector LookAtTargetClean = FVector(LookAtTarget.X, LookAtTarget.Y, TurretMesh->GetComponentLocation().Z);
 	FVector StartLocation = TurretMesh->GetComponentLocation();
