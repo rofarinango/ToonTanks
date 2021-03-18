@@ -12,6 +12,7 @@ class UCameraComponent;
 class USceneComponent;
 class APlayerController;
 class AProjectileBase;
+class UHealthComponent;
 UCLASS()
 class TOONTANKS_API ACharacterBase :  public ACharacter
 {
@@ -31,9 +32,14 @@ public:
 	UStaticMeshComponent* TurretMesh;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Player")
 	USceneComponent* ProjectileSpawnPoint;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
+	UHealthComponent* HealthComponent;
 		// Variables
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Projectile Type")
 	TSubclassOf<AProjectileBase> ProjectileClass;
+
+	UPROPERTY(EditAnywhere, Category = "Effects")
+	UParticleSystem* DeathParticle;
 
 protected:
 

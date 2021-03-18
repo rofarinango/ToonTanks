@@ -10,6 +10,8 @@
 #include "GameFramework/Controller.h"
 #include "GameFramework/PlayerController.h"
 #include "ToonTanks/Actors/ProjectileBase.h"
+#include "ToonTanks/Components/HealthComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 ACharacterBase::ACharacterBase()
@@ -31,6 +33,8 @@ ACharacterBase::ACharacterBase()
 
 	ProjectileSpawnPoint = CreateDefaultSubobject<USceneComponent>(TEXT("Projectile Spawn Point"));
 	ProjectileSpawnPoint->SetupAttachment(TurretMesh);
+
+	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("Health Component"));
 
 	BaseTurnRate = 45.0f;
 }
@@ -98,6 +102,7 @@ void ACharacterBase::HandleDestruction()
 {
 	// -- Universal functionailty ---
 	// Play deaths effects particle, sound and camera shake.
+	UGameplayStatics::SpawnEmitterAtLocation(this, DeathParticle, GetActorLocation());
 
 	// -- Then do Child overrides --
 	// -- PawnTurret - Inform GameMode Turret died -> Then Destry() self.
