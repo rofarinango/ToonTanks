@@ -34,7 +34,7 @@ public:
 	USceneComponent* ProjectileSpawnPoint;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
 	UHealthComponent* HealthComponent;
-		// Variables
+	// Variables
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Projectile Type")
 	TSubclassOf<AProjectileBase> ProjectileClass;
 
@@ -50,7 +50,7 @@ protected:
 	void MoveForward(float Value);
 	void MoveRight(float Value);
 	void Rotate(float Value);
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Camera")
 	float BaseTurnRate;
 
 	APlayerController* PlayerControllerRef;
