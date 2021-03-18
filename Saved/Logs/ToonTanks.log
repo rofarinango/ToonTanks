@@ -706,3 +706,58 @@ LogConfig: Setting CVar [[r.setres:1280x720]]
 [2021.03.17-22.55.29:795][810]LogAISub: UAISubsystem::~UAISubsystem AIPerceptionSystem (0000025F2E691F80), frame # 1810
 [2021.03.17-22.55.29:797][810]LogUObjectHash: Compacting FUObjectHashTables data took   1.32ms
 [2021.03.17-22.55.29:830][811]LogPlayLevel: Display: Destroying online subsystem :Context_3
+[2021.03.17-23.06.35:104][575]LogTemp: Resetting audio stream to device id 
+[2021.03.17-23.06.35:128][575]LogAudioMixer: Display: 0: FrontLeft
+[2021.03.17-23.06.35:128][575]LogAudioMixer: Display: 1: FrontRight
+[2021.03.17-23.48.43:040][583]LogTemp: Resetting audio stream to device id 
+[2021.03.17-23.48.43:101][583]LogAudioMixer: Display: 0: FrontLeft
+[2021.03.17-23.48.43:101][583]LogAudioMixer: Display: 1: FrontRight
+[2021.03.17-23.48.43:375][585]LogHttp: Warning: 0000025F4E023900: invalid HTTP response code received. URL: https://datarouter.ol.epicgames.com/datarouter/api/v1/public/data?SessionID=%7BE16312CB-4AB4-6D9D-7031-D48CB7DBBABF%7D&AppID=UEEditor.Rocket.Release&AppVersion=4.25.4-14469661%2B%2B%2BUE4%2BRelease-4.25&UserID=eaa3a0aa45f8a60c59fa7b88d019f31a%7Cbf658731fb1745f18e59cbac7bde0262%7Cc30e73b5-a732-43cb-99eb-083c2ca7ed85&AppEnvironment=datacollector-source&UploadType=eteventstream, HTTP code: 0, content length: 0, actual payload size: 0
+[2021.03.17-23.48.43:375][585]LogHttp: Warning: 0000025F4E023900: request failed, libcurl error: 6 (Couldn't resolve host name)
+[2021.03.17-23.48.43:375][585]LogHttp: Warning: 0000025F4E023900: libcurl info message cache 0 (Connection 4 seems to be dead!)
+[2021.03.17-23.48.43:375][585]LogHttp: Warning: 0000025F4E023900: libcurl info message cache 1 (Closing connection 4)
+[2021.03.17-23.48.43:375][585]LogHttp: Warning: 0000025F4E023900: libcurl info message cache 2 (Could not resolve host: datarouter.ol.epicgames.com)
+[2021.03.17-23.48.43:375][585]LogHttp: Warning: 0000025F4E023900: libcurl info message cache 3 (Closing connection 5)
+[2021.03.17-23.48.43:718][586]LogHttp: Warning: Retry exhausted on https://datarouter.ol.epicgames.com/datarouter/api/v1/public/data?SessionID=%7BE16312CB-4AB4-6D9D-7031-D48CB7DBBABF%7D&AppID=UEEditor.Rocket.Release&AppVersion=4.25.4-14469661%2B%2B%2BUE4%2BRelease-4.25&UserID=eaa3a0aa45f8a60c59fa7b88d019f31a%7Cbf658731fb1745f18e59cbac7bde0262%7Cc30e73b5-a732-43cb-99eb-083c2ca7ed85&AppEnvironment=datacollector-source&UploadType=eteventstream
+[2021.03.17-23.48.54:078][623]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2021.03.17-23.49.19:831][146]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2021.03.17-23.49.28:754][142]LogSlate: Took 0.000141 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2021.03.17-23.49.34:075][740]LogAssetEditorSubsystem: Opening Asset editor for Class /Script/ToonTanks.TankGameModeBase
+[2021.03.18-00.02.26:296][130]Candidate modules for hot reload:
+[2021.03.18-00.02.26:296][130]  ToonTanks
+[2021.03.18-00.02.26:296][130]Launching UnrealBuildTool... [D:/Program Files/Epic Games/UE_4.25/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=ToonTanks,8600 ToonTanksEditor Win64 Development -Project="C:/Users/rodri/Documents/Unreal Projects/ToonTanks/ToonTanks.uproject" "C:/Users/rodri/Documents/Unreal Projects/ToonTanks/ToonTanks.uproject"  -IgnoreJunk]
+[2021.03.18-00.02.26:312][130]Warning: Starting HotReload took  0.0s.
+[2021.03.18-00.02.46:400][320]CompilerResultsLog: New page: Compilation - Mar 17, 2021, 2:02:46 PM
+[2021.03.18-00.02.46:401][320]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (C:\Users\rodri\Documents\Unreal Projects\ToonTanks).
+[2021.03.18-00.02.46:401][320]CompilerResultsLog: Parsing headers for ToonTanksEditor
+[2021.03.18-00.02.46:401][320]CompilerResultsLog:   Running UnrealHeaderTool "C:\Users\rodri\Documents\Unreal Projects\ToonTanks\ToonTanks.uproject" "C:\Users\rodri\Documents\Unreal Projects\ToonTanks\Intermediate\Build\Win64\ToonTanksEditor\Development\ToonTanksEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\rodri\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
+[2021.03.18-00.02.46:401][320]CompilerResultsLog: Reflection code generated for ToonTanksEditor in 6.9969078 seconds
+[2021.03.18-00.02.46:401][320]CompilerResultsLog: Building ToonTanksEditor...
+[2021.03.18-00.02.46:401][320]CompilerResultsLog: Using Visual Studio 2019 14.28.29334 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333) and Windows 10.0.18362.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2021.03.18-00.02.46:401][320]CompilerResultsLog: Building 15 actions with 4 processes...
+[2021.03.18-00.02.46:401][320]CompilerResultsLog:   [1/15] ToonTanks.init.gen.cpp
+[2021.03.18-00.02.46:401][320]CompilerResultsLog:   [2/15] PawnTurret.gen.cpp
+[2021.03.18-00.02.46:401][320]CompilerResultsLog:   [3/15] PawnTank.gen.cpp
+[2021.03.18-00.02.46:401][320]CompilerResultsLog:   [4/15] TankGameModeBase.gen.cpp
+[2021.03.18-00.02.46:401][320]CompilerResultsLog:   [5/15] PawnBase.gen.cpp
+[2021.03.18-00.02.46:401][320]CompilerResultsLog:   [6/15] CharacterBase.gen.cpp
+[2021.03.18-00.02.46:401][320]CompilerResultsLog:   [7/15] PawnTank.cpp
+[2021.03.18-00.02.46:401][320]CompilerResultsLog:   [8/15] PawnTurret.cpp
+[2021.03.18-00.02.46:401][320]CompilerResultsLog:   [9/15] PawnBase.cpp
+[2021.03.18-00.02.46:401][320]CompilerResultsLog:   [10/15] HealthComponent.cpp
+[2021.03.18-00.02.46:401][320]CompilerResultsLog:   [11/15] TankGameModeBase.cpp
+[2021.03.18-00.02.46:401][320]CompilerResultsLog:   [12/15] CharacterBase.cpp
+[2021.03.18-00.02.46:401][320]CompilerResultsLog:   [13/15] UE4Editor-ToonTanks-8600.lib
+[2021.03.18-00.02.46:401][320]CompilerResultsLog:      Creating library C:\Users\rodri\Documents\Unreal Projects\ToonTanks\Intermediate\Build\Win64\UE4Editor\Development\ToonTanks\UE4Editor-ToonTanks-8600.lib and object C:\Users\rodri\Documents\Unreal Projects\ToonTanks\Intermediate\Build\Win64\UE4Editor\Development\ToonTanks\UE4Editor-ToonTanks-8600.exp
+[2021.03.18-00.02.46:401][320]CompilerResultsLog:   [14/15] UE4Editor-ToonTanks-8600.dll
+[2021.03.18-00.02.46:401][320]CompilerResultsLog:      Creating library C:\Users\rodri\Documents\Unreal Projects\ToonTanks\Intermediate\Build\Win64\UE4Editor\Development\ToonTanks\UE4Editor-ToonTanks-8600.suppressed.lib and object C:\Users\rodri\Documents\Unreal Projects\ToonTanks\Intermediate\Build\Win64\UE4Editor\Development\ToonTanks\UE4Editor-ToonTanks-8600.suppressed.exp
+[2021.03.18-00.02.46:401][320]CompilerResultsLog:   [15/15] ToonTanksEditor.target
+[2021.03.18-00.02.46:401][320]CompilerResultsLog: Total time in Parallel executor: 11.59 seconds
+[2021.03.18-00.02.46:401][320]CompilerResultsLog: Total execution time: 19.91 seconds
+[2021.03.18-00.02.46:401][320]LogMainFrame: MainFrame: Module compiling took 20.110 seconds
+[2021.03.18-00.02.46:427][320]LogClass: Could not find existing class TankGameModeBase in package /Script/ToonTanks for HotReload, assuming new class
+[2021.03.18-00.02.46:442][320]LogHotReload: Re-instancing TankGameModeBase after hot-reload.
+[2021.03.18-00.02.46:453][320]LogContentBrowser: Native class hierarchy updated for 'ToonTanks' in 0.0006 seconds. Added 7 classes and 7 folders.
+[2021.03.18-00.02.46:455][320]Display: HotReload successful (2 functions remapped  0 scriptstructs remapped)
+[2021.03.18-00.02.46:591][320]LogContentBrowser: Native class hierarchy populated in 0.0109 seconds. Added 3434 classes and 828 folders.
+[2021.03.18-00.02.46:591][320]Display: HotReload took 20.3s.
