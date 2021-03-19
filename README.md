@@ -7,7 +7,7 @@ This repo contains the ToonTanks game development code using UnrealEngine for th
 
 This project was build and developed using Unreal Engine version 4.25.4, using another version to build this project may produce conflicts. So when cloning this project be sure to use Unreal Engine version 4.25.4. Using HTTPS:
 
-`$git clone https://github.com/rofarinango/ToonTanks.git`
+`git clone https://github.com/rofarinango/ToonTanks.git`
 
 # Setting Up VS Code In Unreal
 
