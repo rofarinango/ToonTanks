@@ -114,8 +114,8 @@ Below are the rubric points that are addressed/implemented in this project.
 ## Object Oriented Programming
 - The project uses Object Oriented Programming techniques.
 - Classes use appropriate access specifiers for class members (see `CharacterBase.h`, `PawnBase.h`,  `ProjectileBase.h`).
-- Overloaded functions allow the same function to operate on different parameters  
 - Classes follow an appropriate inheritance hierarchy (see class in `PawnBase.h` and `PawnTurret.h`).
+- Derived class functions override virtual base class functions. One member function in an inherited class overrides a virtual base class member function. (See `PawnTurret.h` from line 36, also every class overrides BeginPlay() function).
  
  
  
